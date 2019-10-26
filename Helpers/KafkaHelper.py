@@ -39,9 +39,6 @@ class KafkaHelper:
             print("Kafka Producer can not be started! The exception was: %s" % str(e))
             exit(1)
 
-    def set_thread_manager(self, _thread_manager):
-        self.listener_thread = _thread_manager
-
     def publish_message(self, key, value, topic):
         try:
             key_bytes = bytes(key, encoding='utf-8')
